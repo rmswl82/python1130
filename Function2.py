@@ -25,3 +25,16 @@ def func2(a):
 
 #호출
 print(func2(1))
+
+
+#전역변수를 읽기/쓰기할 경우 불변 형식이면 global 키워드 사용
+
+g=1
+def testScope(a):
+    global g
+    g=2
+    return g+a
+
+#호출
+print(testScope(1))
+print("함수 호출 후 전역변후 g:", g)
