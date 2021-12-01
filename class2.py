@@ -19,6 +19,12 @@ p1 = Person()
 p2 = Person()
 print("인스턴트 갯수:{0}".format(Person.num_person))
 
+#특정 인스턴스에 변수를 추가
+p1.age = 30
+print(p1.age)
+# #p2 멤버변수가 없으므로 attributeerror 에러 메시지
+# print(p2.age)
+
 
 
 
