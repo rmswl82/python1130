@@ -26,4 +26,4 @@ print(link)
 for item in cartoons:
     title = item.find("a").text.strip()
     print(title)
-    
+
