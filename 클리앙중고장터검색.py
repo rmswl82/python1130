@@ -16,7 +16,13 @@ for n in range(0,10):
         data = urllib.request.urlopen(req).read()
         page = data.decode('utf-8', 'ignore')
         soup = BeautifulSoup(page, 'html.parser')
-        list = soup.findAll('a', attrs={'class':'list_subject'})
+
+        # <span class="subject_fixed" data-role="list-title-text" title="아이폰11 프로 64g 11월7일 리퍼폰 배터리 100">
+        #                     아이폰11 프로 64g 11월7일 리퍼폰 배터리 100
+        #                 </span>
+        #span 태그에서 속성으로 class = list_subject
+
+        list = soup.find_all('span', attrs={'data-role':'list-title-text'})
 
         for item in list:
                 try:
